@@ -1,0 +1,31 @@
+{
+  "name": "ships",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "browserify --debug index.js | exorcist bundle.min.js.map > bundle.min.js",
+    "dev": "nf start --procfile ./Procfile"
+  },
+  "author": "Richard Walker <digitalsadhu@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.9.0",
+    "babelify": "^7.3.0",
+    "browserify": "^13.0.1",
+    "exorcist": "^0.4.0",
+    "foreman": "^1.4.1",
+    "http-server": "^0.9.0",
+    "rollupify": "^0.3.1",
+    "uglifyify": "^3.0.2",
+    "watchify": "^3.7.0"
+  },
+  "browserify": {
+    "transform": [
+      "rollupify",
+      "babelify",
+      "uglifyify"
+    ]
+  }
+}
